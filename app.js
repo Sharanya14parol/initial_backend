@@ -7,6 +7,10 @@ const port = 3000;
 // Middleware
 app.use(express.json());
 
+app.get('/test', (req, res) => {
+    res.send('Server is working');
+});
+
 // Routes
 app.use('/api/seats', seatRoutes);
 
@@ -14,3 +18,5 @@ app.use('/api/seats', seatRoutes);
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+module.exports = app;  

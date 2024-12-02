@@ -7,3 +7,4 @@ const insertSeatAllocations = (seatAllocations, callback) => {
 };
 
 module.exports = { insertSeatAllocations };
+

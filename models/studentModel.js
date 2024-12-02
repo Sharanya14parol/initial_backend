@@ -1,18 +1,17 @@
-// const db = require('../config/db');
 
-// // Fetch all students, ordered by course_id
-// const getAllStudents = (callback) => {
-//     const query = 'SELECT * FROM Students ORDER BY course_id';
-//     db.query(query, callback);
-// };
+const db = require("../config/db");
 
-// module.exports = { getAllStudents };
-const db = require('../config/db');
 
-// Fetch all students with full details, ordered by course_id
-const getAllStudents = (callback) => {
-    const query = 'SELECT student_id, name, course_id FROM Students ORDER BY course_id';
-    db.query(query, callback);
+const getAllStudents = async () => {
+  return new Promise((resolve, reject) => {
+    const query = "SELECT * FROM students"; // Replace with your table name
+    db.query(query, (err, results) => {
+      if (err) {
+        return reject(err); // Reject the promise if there's an error
+      }
+      resolve(results); // Resolve the promise with results
+    });
+  });
 };
 
 module.exports = { getAllStudents };
