@@ -1,0 +1,5 @@
+# Ignore environment configuration files
+db.js
+
+# Node.js dependencies
+node_modules/
